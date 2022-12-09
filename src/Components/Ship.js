@@ -42,7 +42,7 @@ export default function Ships() {
 
   //read JSON data
   useEffect(() => {
-    fetch("../data/shipData.json")
+    fetch("data/shipData.json")
       .then((res) => res.json())
       .then((ships) => {
         setShips(ships);
@@ -51,6 +51,7 @@ export default function Ships() {
   //set JSON data into the Card object
 
   const shipData = ships.map((ship, index) => (
+    
     <Card
       container
       spacing={0}
@@ -123,7 +124,7 @@ export default function Ships() {
       </Collapse>
     </Card>
   ));
-
+  console.log("./data/shipData.json")
   return <div className="grid">{shipData}</div>;
 
   // Card Name, insert ship name
